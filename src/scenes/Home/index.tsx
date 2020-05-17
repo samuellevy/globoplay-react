@@ -3,10 +3,16 @@ import Menu from "../../components/Menu";
 
 import { Container } from "./styles";
 
+import { KeyboardProvider } from "../../contexts/KeyboardContext";
+import KeyboardHandle from "../../components/KeyboardHandle";
+
 const Home: React.FC = () => {
   return (
     <Container>
-      <Menu />
+      <KeyboardProvider>
+        <KeyboardHandle />
+        <Menu />
+      </KeyboardProvider>
     </Container>
   );
 };
