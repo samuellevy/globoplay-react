@@ -13,5 +13,6 @@ export default createGlobalStyle`
 
 body{
   background: ${colors.gray};
+  font-family: "Open Sans", sans-serif;
 }
 `;

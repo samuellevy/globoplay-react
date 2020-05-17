@@ -11,6 +11,7 @@ interface IItem {
 }
 
 export const Container = styled.nav<IContainer>`
+  position: fixed;
   height: 100vh;
   background-color: ${colors.darkGray};
   color: ${colors.white};
@@ -21,17 +22,15 @@ export const Container = styled.nav<IContainer>`
   width: 100%;
   transform: translateX(-189px);
   max-width: 289px;
-  transition: all 500ms linear;
-  /* > li {
-    justify-content: center;
-    overflow: hidden;
-  }*/
+  transition: all 200ms linear;
+  z-index: 99;
   span{
     opacity: 0;
+    transition: opacity 500ms linear;
   }
   svg {
     transform: translateX(189px);
-    transition: transform 500ms linear;
+    transition: transform 200ms linear;
   }
   ${props => props.active && `
     width: 100%;
