@@ -33,6 +33,10 @@
       "error",
       "ignorePackages",
       { "ts": "never", "tsx": "never" }
+    ],
+    "@typescript-eslint/interface-name-prefix": [
+      "error",
+      { "prefixWith": "always" }
     ]
   },
   "settings": {
