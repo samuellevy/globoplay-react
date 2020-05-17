@@ -1,0 +1,71 @@
+# Teste globo.com
+
+
+### Detalhes da entrega
+**Prazo**: 19/março - 12h00  
+[ ] Colocar o repo público  
+[ ] Enviar link para avaliação
+
+### Exemplo  
+![Banana](./teste-globoplay-tv.gif)
+
+### RF  
+- Geral  
+[ ] Navegação com as arrows do teclado  
+[ ] Criar estilização  
+[ ] Mudar imagem do fundo ao trocar itens e focos entre os itens
+
+- Menu  
+[ ] Só navega o menu verticalmente.  
+[ ] Quando pressionado para direita, muda muda o foco para `Destaque`  
+
+- Destaque  
+[ ] `Destaque` navega entre os dois botões.  
+[ ] Quando pressionado para a esquerda e estiver no primeiro botão, volta o foco para o `Menu`.  
+[ ] Quando pressionado para baixo, foca o `Trilho` e some o `Destaque`.
+
+- Trilho  
+[ ] Navega entre os itens  
+[ ] Quando pressionado para a esquerda e estiver no primeiro item, foca o `Menu`.  
+[ ] Quando pressionado para cima, o `Destaque` volta a aparecer
+
+### RNF
+[x] Usar Typescript  
+[x] Utilizar eslint + prettier  
+[ ] Não utilizar Redux  
+[ ] Não utilizar lib para navigation  
+[ ] Não utilizar lib para slider
+
+### Questions
+
+### Finalização
+[ ] Explicar o que foi utilizado  
+[ ] Explicar o que não foi utilizado e porquê  
+[ ] Explicar arquitetura usada  
+
+### E-mail original
+```
+Oá,
+
+Obrigado pelo interesse em fazer o teste. Você tem até terça-feira 19/05, meio dia para envio da solução. Você deve hospedá-la em algum repositório público e enviar o link para avaliação.
+
+O teste consiste no desenvolvimento de uma aplicação em que sua navegação funcione através das setas do teclado conforme GIF enviado em anexo e deverá ser feito obrigatoriamente em React. Não utilize o Redux nem bibliotecas prontas para navegação e slider.
+
+Comportamento esperado dos componentes:
+
+Menu
+- Só navega verticalmente entre seus itens e quando pressionado para direita, o foco deve ir para o Destaque se este estiver visível ou o Trilho.
+
+Destaque
+- Navega entre seus dois botões e quando o foco estiver no primeiro botão, pressionado para a esquerda, o Menu deve ganhar foco e ser aberto. Pressionado para baixo, deve focar o Trilho e o Destaque sumir.
+
+Trilho
+- Navega entre seus itens e quando o pressionado para a esquerda, se o primeiro item está selecionado, o Menu deve ganhar foco e ser aberto. Quando pressionado para cima, o Destaque deve ganhar foco e aparecer.
+
+Bônus:
+Sempre que o foco mudar entre itens no Trilho ou quando o Destaque ganhar ou perder foco para o Trilho, a imagem de fundo deve ser alterada. TypeScript é um diferencial.
+
+Qualquer dúvida, estou à disposição.
+
+Abs, Rafael.
+```
