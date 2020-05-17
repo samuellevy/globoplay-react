@@ -1,7 +1,13 @@
 import React from "react";
 
-function App() {
-  return <h1>Hello!</h1>;
-}
+import GlobalStyle from "./global/styles";
+import Home from "./scenes/Home";
+
+const App: React.FC = () => (
+  <>
+    <Home />
+    <GlobalStyle />
+  </>
+);
 
 export default App;
