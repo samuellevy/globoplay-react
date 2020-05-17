@@ -26,6 +26,7 @@ export const Item = styled.li<IItem>`
   ${props => props.selected && `
     background-color: ${colors.gray};
     color: ${colors.darkGray};
+    transition: background-color 500ms linear;
   `};
   }
 `;

@@ -10,15 +10,20 @@ export default function KeyboardHandle(){
     ({key}) => {
       setKey(key);
     },
-    [setKey]
+    [key]
   );
 
+  const drop = useCallback(
+    ({key}) => {
+      setKey("");
+    },
+    [key]
+  );
   // Add event listener using our hook
   useEventListener('keydown', handler);
+  useEventListener('keyup', drop);
 
   useEffect(()=>{
-    console.log(key);
-    localStorage.setItem('key', key);
     dispatch(updateKey(key));
   },[key]);
 

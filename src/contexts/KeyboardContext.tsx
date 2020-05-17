@@ -27,9 +27,9 @@ export function controlKeyReducer(state: any, action: any) {
 }
 
 function KeyboardProvider(props: any) {
-  const [items, dispatch] = useReducer(controlKeyReducer, initialItems);
+  const [keyControl, dispatch] = useReducer(controlKeyReducer, initialItems);
 
-  const todoData = { items, dispatch };
+  const todoData = { keyControl, dispatch };
 
   return <TodoContext.Provider value={todoData} {...props} />;
 }
