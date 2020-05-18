@@ -14,6 +14,7 @@ export const Container = styled.article<IContainer>`
   height: 216px;
   position: relative;
   float: left;
+  margin-right: 25px;
   ::after{
     position: absolute;
     top: 0; left: 0;

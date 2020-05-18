@@ -4,6 +4,10 @@ interface IContainer{
   selected: boolean
 }
 
+interface ITrack{
+  position: number
+}
+
 export const Container = styled.div<IContainer>`
   margin: 50px 0;
   overflow: hidden;
@@ -22,7 +26,8 @@ export const Container = styled.div<IContainer>`
   `}
 `;
 
-export const Track = styled.div`
+export const Track = styled.div<ITrack>`
   width: 9999px;
-  transform: translateX(0px);
+  transform: translateX(-${props=>props.position}px);
+  transition: all 200ms linear;
 `;

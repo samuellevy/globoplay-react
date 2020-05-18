@@ -37,10 +37,17 @@ const Menu: React.FC = () => {
   const { keyControl, dispatch }: any = useKeyboardContext();
 
   useEffect(()=>{
-    // console.log(keyControl);
-    controlHandler(keyControl.key);
-    console.log(activeItem);
+    if(keyControl.component==="menu"){
+      controlHandler(keyControl.key);
+    }
   },[keyControl]);
+
+  useEffect(()=>{
+    if(keyControl.component==="menu"){
+      setActiveMenu(true);
+      setActiveItem(1);
+    }
+  },[keyControl.component]);
 
   const controlHandler = (key: string) => {
     let newActiveItem = activeItem;
