@@ -24,7 +24,6 @@ const Featured: React.FC = () => {
 
   const controlHandler = (key: string) => {
     if(key==="ArrowLeft"){
-      console.log('left');
       changeItem("previous");
     }
 
@@ -37,6 +36,11 @@ const Featured: React.FC = () => {
         changeItem("next");
       }
     }
+
+    else if(key==="ArrowUp"){
+      setFeaturedSelected(false);
+      dispatch(changeComponent("links"));
+    }
   }
 
   const changeItem = (direction: string) => {
@@ -47,12 +51,9 @@ const Featured: React.FC = () => {
       }
     }
     else if(direction === 'previous'){
-      if(activeItem > 0){
+      if(activeItem > 1){
         setTrackPosition(trackPosition - 395 - 25);
         setActiveItem(activeItem - 1);
-      }
-      if(activeItem === 1){
-        dispatch(changeComponent("menu"));
       }
     }
   }
