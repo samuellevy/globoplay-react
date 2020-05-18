@@ -14,6 +14,10 @@ const Featured: React.FC = () => {
 
   useEffect(()=>{
     if(keyControl.component==="featured"){
+      if(featuredSelected === false){
+        setFeaturedSelected(true);
+        setActiveItem(1);
+      }
       controlHandler(keyControl.key);
     }
   },[keyControl]);

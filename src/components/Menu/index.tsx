@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { Container, Item } from "./styles";
 import Icon from "../Icon";
-import { useKeyboardContext } from "../../contexts/KeyboardContext";
+import { useKeyboardContext, changeComponent } from "../../contexts/KeyboardContext";
 
 const Menu: React.FC = () => {
   const [items, setItem] = useState([
@@ -46,6 +46,9 @@ const Menu: React.FC = () => {
     if(keyControl.component==="menu"){
       setActiveMenu(true);
       setActiveItem(1);
+    } else {
+      setActiveMenu(false);
+      setActiveItem(0);
     }
   },[keyControl.component]);
 
@@ -66,6 +69,9 @@ const Menu: React.FC = () => {
         setActiveMenu(false);
       }
       setActiveItem(newActiveItem);
+    }
+    else if(key==="ArrowRight"){
+      dispatch(changeComponent('featured'));
     }
   }
 
