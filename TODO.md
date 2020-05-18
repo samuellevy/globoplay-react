@@ -2,46 +2,46 @@
 
 
 ### Detalhes da entrega
-**Prazo**: 19/março - 12h00
-[ ] Colocar o repo público
-[ ] Enviar link para avaliação
+**Prazo**: 19/março - 12h00  
+[ ] Colocar o repo público  
+[ ] Enviar link para avaliação  
 
 ### Exemplo
-![Banana](./teste-globoplay-tv.gif)
+![GloboTest](./teste-globoplay-tv.gif)
 
 ### RF
-- Geral
-[ ] Navegação com as arrows do teclado
-[ ] Criar estilização
-[ ] Mudar imagem do fundo ao trocar itens e focos entre os itens
+- Geral  
+[x] Navegação com as arrows do teclado  
+[x] Criar estilização  
+[ ] Mudar imagem do fundo ao trocar itens e focos entre os itens  
 
-- Menu
-[x] Só navega o menu verticalmente.
-[ ] Quando pressionado para direita, muda muda o foco para `Destaque`
+- Menu  
+[x] Só navega o menu verticalmente.  
+[?] Quando pressionado para direita, muda muda o foco para `Destaque`  
 
-- Destaque
-[ ] `Destaque` navega entre os dois botões.
-[ ] Quando pressionado para a esquerda e estiver no primeiro botão, volta o foco para o `Menu`.
-[ ] Quando pressionado para baixo, foca o `Trilho` e some o `Destaque`.
+- Destaque  
+[x] `Destaque` navega entre os dois botões.  
+[x] Quando pressionado para a esquerda e estiver no primeiro botão, volta o foco para o `Menu`.  
+[x] Quando pressionado para baixo, foca o `Trilho` e some o `Destaque`.  
 
-- Trilho
-[ ] Navega entre os itens
-[ ] Quando pressionado para a esquerda e estiver no primeiro item, foca o `Menu`.
-[ ] Quando pressionado para cima, o `Destaque` volta a aparecer
+- Trilho  
+[ ] Navega entre os itens  
+[ ] Quando pressionado para a esquerda e estiver no primeiro item, foca o `Menu`.  
+[ ] Quando pressionado para cima, o `Destaque` volta a aparecer  
 
 ### RNF
-[x] Usar Typescript
-[x] Utilizar eslint + prettier
-[x] Não utilizar Redux
-[x] Não utilizar lib para navigation
-[ ] Não utilizar lib para slider
+[x] Usar Typescript  
+[x] Utilizar eslint + prettier  
+[x] Não utilizar Redux  
+[x] Não utilizar lib para navigation  
+[x] Não utilizar lib para slider  
 
 ### Questions
 
 ### Finalização
-[ ] Explicar o que foi utilizado
-[ ] Explicar o que não foi utilizado e porquê
-[ ] Explicar arquitetura usada
+[ ] Explicar o que foi utilizado  
+[ ] Explicar o que não foi utilizado e porquê  
+[ ] Explicar arquitetura usada  
 
 ### E-mail original
 ```
