@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 
-import { Container, Options, Button } from "./styles";
+import { Container, Details, Options, Button } from "./styles";
 import {
   useKeyboardContext,
   changeComponent,
 } from "../../contexts/KeyboardContext";
 
+import {
+  useProgramsContext,
+  updateItems,
+} from "../../contexts/ProgramsContext";
+
 const Program: React.FC = () => {
   const [activeItem, setActiveItem] = useState(0);
   const { keyControl, dispatch }: any = useKeyboardContext();
   const [linksSelected, setLinksSelected] = useState(false);
+
+  const { programs }: any = useProgramsContext();
 
   const [items, setItems] = useState([
     {
@@ -23,6 +30,10 @@ const Program: React.FC = () => {
       title: "Veja mais",
     },
   ]);
+
+  useEffect(() => {
+    console.log(programs);
+  }, [programs]);
 
   useEffect(() => {
     if (keyControl.component === "links") {
@@ -75,11 +86,16 @@ const Program: React.FC = () => {
 
   return (
     <>
-      <h1>BIG BROTHER BRASIL</h1>
-      <p>
-        Acompanhe 24h ao vivo a casa mais
-        <br /> vigiada do Brasil
-      </p>
+      {programs.items.length > 0 && (
+        <Details>
+          <h1>{programs.items[programs.activeProgram].title}</h1>
+          <p>
+            Acompanhe 24h ao vivo a casa mais
+            <br /> vigiada do Brasil
+          </p>
+        </Details>
+      )}
+
       <Options>
         {items.map((item) => {
           return (

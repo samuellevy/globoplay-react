@@ -1,29 +1,30 @@
-import React, { useState, useEffect } from "react";
-import Menu from "../../components/Menu";
+import React, { useState, useEffect, useCallback } from "react";
 
 import { Container, Content, Cover } from "./styles";
-
-import KeyboardHandle from "../../components/KeyboardHandle";
 
 import coverBg from "../../assets/images/bg-bigbrotherbrasil.jpg";
 import Featured, { ThumbItem } from "../../components/Featured";
 
 import Program from "../../components/Program";
 
-import {
-  useKeyboardContext,
-  changeComponent,
-} from "../../contexts/KeyboardContext";
-
 import api from "../../services/api";
 
+import {
+  useProgramsContext,
+  updateItems,
+  setActiveProgram,
+} from "../../contexts/ProgramsContext";
+
 const Home: React.FC = () => {
-  const [programs, setPrograms] = useState([]);
+  const { programs, dispatch }: any = useProgramsContext();
+  const { items, activeProgram } = programs;
 
   async function getPrograms() {
     try {
       const response = await api.get("/data.json");
-      setPrograms(response.data.programs);
+      if (response.data.programs.length > 0) {
+        dispatch(updateItems(response.data.programs));
+      }
     } catch (err) {
       console.log("erro ao recuperar dados da api.");
     }
@@ -42,12 +43,15 @@ const Home: React.FC = () => {
   }
   return (
     <Container>
-      <Cover background={coverBg} />
+      {items.map((item: IItem, key: number) => (
+        <Cover background={item.cover} active={key === activeProgram} />
+      ))}
+
       <Content>
         <Program />
 
         <Featured>
-          {programs.map((item: IItem) => {
+          {items.map((item: IItem) => {
             const { id, title, description, thumbnail } = item;
             return (
               <ThumbItem

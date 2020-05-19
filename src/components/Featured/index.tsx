@@ -8,13 +8,20 @@ import {
   changeComponent,
 } from "../../contexts/KeyboardContext";
 
+import {
+  useProgramsContext,
+  setActiveProgram,
+} from "../../contexts/ProgramsContext";
+
 const Featured: React.FC = (props) => {
   const { keyControl, dispatch }: any = useKeyboardContext();
+  const programsContext: any = useProgramsContext();
 
   const [featuredSelected, setFeaturedSelected] = useState(false);
   const [trackPosition, setTrackPosition] = useState(0);
+  const [activeItem, setActiveItem] = useState(0);
 
-  const [activeItem, setActiveItem] = useState(1);
+  const totalPrograms = programsContext.programs.items.length;
 
   useEffect(() => {
     if (keyControl.component === "featured") {
@@ -24,6 +31,10 @@ const Featured: React.FC = (props) => {
       controlHandler(keyControl.key);
     }
   }, [keyControl]);
+
+  useEffect(() => {
+    programsContext.dispatch(setActiveProgram(activeItem));
+  }, [activeItem]);
 
   const controlHandler = (key: string) => {
     if (key === "ArrowLeft") {
@@ -44,15 +55,15 @@ const Featured: React.FC = (props) => {
 
   const changeItem = (direction: string) => {
     if (direction === "next") {
-      if (activeItem < 6) {
+      if (activeItem < totalPrograms - 1) {
         setTrackPosition(trackPosition + 395 + 25);
         setActiveItem(activeItem + 1);
       }
     } else if (direction === "previous") {
-      if (activeItem > 1) {
+      if (activeItem > 0) {
         setTrackPosition(trackPosition - 395 - 25);
         setActiveItem(activeItem - 1);
-      } else if (activeItem === 1) {
+      } else if (activeItem === 0) {
         dispatch(changeComponent("menu"));
         setFeaturedSelected(false);
       }

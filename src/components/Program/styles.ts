@@ -7,6 +7,8 @@ interface IButton {
 
 export const Container = styled.div``;
 
+export const Details = styled.div``;
+
 export const Options = styled.div`
   display: flex;
   margin: 25px 0;
