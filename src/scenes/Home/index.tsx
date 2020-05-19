@@ -16,6 +16,8 @@ import {
 
 import { useKeyboardContext } from "../../contexts/KeyboardContext";
 
+import IEpisodeDetails from "../../dtos/IEpisodeDetails";
+
 const Home: React.FC = () => {
   const { keyControl }: any = useKeyboardContext();
   const { programs, dispatch }: any = useProgramsContext();
@@ -37,16 +39,9 @@ const Home: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  interface IItem {
-    id: number;
-    title?: string;
-    description?: string;
-    thumbnail?: string;
-    cover?: string;
-  }
   return (
     <Container>
-      {episodes.map((item: IItem, key: number) => (
+      {episodes.map((item: IEpisodeDetails, key: number) => (
         <Cover
           background={item.cover}
           active={key === activeProgram}
@@ -63,14 +58,15 @@ const Home: React.FC = () => {
         <Program />
 
         <Featured>
-          {episodes.map((item: IItem) => {
-            const { id, title, description, thumbnail } = item;
+          {episodes.map((item: IEpisodeDetails) => {
+            const { id, title, description, thumbnail, duration } = item;
             return (
               <ThumbItem
                 key={id}
                 title={title}
                 thumbnail={thumbnail}
                 description={description}
+                duration={duration}
               />
             );
           })}

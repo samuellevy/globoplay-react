@@ -1,4 +1,5 @@
 import React from "react";
+import IEpisodeDetails from "../../dtos/IEpisodeDetails";
 
 import {
   Container,
@@ -9,14 +10,12 @@ import {
   DurationBox,
 } from "./styles";
 
-type ThumbProps = {
-  title?: string;
-  thumbnail?: string;
-  description?: string;
-  duration?: string;
-};
-
-const ThumbItem = ({ title, thumbnail, description, duration }: ThumbProps) => {
+const ThumbItem = ({
+  title,
+  thumbnail,
+  description,
+  duration,
+}: IEpisodeDetails) => {
   return (
     <Container selected={false}>
       <Thumbnail img={thumbnail} />

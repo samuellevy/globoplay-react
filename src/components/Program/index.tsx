@@ -14,7 +14,6 @@ const Program: React.FC = () => {
   const [, setLinksSelected] = useState(false);
 
   const { programs }: any = useProgramsContext();
-
   const [items] = useState([
     {
       id: 1,
@@ -53,9 +52,6 @@ const Program: React.FC = () => {
       setActiveItem(0);
       dispatch(changeComponent("featured"));
     }
-    // if(activeItem === 1){
-    //   dispatch(changeComponent("menu"));
-    // }
     if (key === "ArrowLeft") {
       changeItem("previous");
     } else if (key === "ArrowRight") {
