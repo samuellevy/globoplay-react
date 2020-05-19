@@ -3,7 +3,7 @@ import React, { createContext, useReducer, useContext } from "react";
 export const ProgramsContext = createContext([]);
 
 const initialState = {
-  items: [],
+  episodes: [],
   activeProgram: 0,
 };
 
@@ -12,8 +12,8 @@ export const UPDATE_ITEMS = "UPDATE_ITEMS";
 export const SET_ACTIVE_PROGRAM = "SET_ACTIVE_PROGRAM";
 
 // Action creators
-export function updateItems(items: Object[]) {
-  return { type: UPDATE_ITEMS, items };
+export function updateItems(episodes: Object[]) {
+  return { type: UPDATE_ITEMS, episodes };
 }
 
 export function setActiveProgram(program_id: number) {
@@ -23,7 +23,7 @@ export function setActiveProgram(program_id: number) {
 export function programsReducer(state: any, action: any) {
   switch (action.type) {
     case "UPDATE_ITEMS":
-      return { ...state, items: action.items };
+      return { ...state, episodes: action.episodes };
     case "SET_ACTIVE_PROGRAM":
       return { ...state, activeProgram: action.activeProgram };
     default:

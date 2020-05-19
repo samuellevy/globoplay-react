@@ -17,7 +17,7 @@ import {
 
 const Home: React.FC = () => {
   const { programs, dispatch }: any = useProgramsContext();
-  const { items, activeProgram } = programs;
+  const { episodes, activeProgram } = programs;
 
   async function getPrograms() {
     try {
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
   }
   return (
     <Container>
-      {items.map((item: IItem, key: number) => (
+      {episodes.map((item: IItem, key: number) => (
         <Cover background={item.cover} active={key === activeProgram} />
       ))}
 
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
         <Program />
 
         <Featured>
-          {items.map((item: IItem) => {
+          {episodes.map((item: IItem) => {
             const { id, title, description, thumbnail } = item;
             return (
               <ThumbItem

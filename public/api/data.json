@@ -3,17 +3,73 @@
     {
       "id": 0,
       "title": "Big Brother Brasil",
-      "description": "Big Brother Brasil",
-      "thumbnail": "/api/images/track_item_1.jpg",
-      "cover": "/api/images/bg-bigbrotherbrasil.jpg",
-      "duration": "3 min"
+      "description": "Bate-papo BBB com Thelma, vencedora do BBB20",
+      "thumbnail": "/api/images/8514229_x216.jpg",
+      "cover": "/api/images/8514229_x720.jpg",
+      "duration": "24 min"
     },
     {
       "id": 1,
-      "title": "Midnight Texas",
-      "description": "Midnight Texas",
-      "thumbnail": "/api/images/track_item_2.jpg",
-      "cover": "/api/images/bg-midnight-texas.jpg",
+      "title": "Big Brother Brasil",
+      "description": "Bate-papo BBB com Manu e Rafa, vencedora do BBB20",
+      "thumbnail": "/api/images/8514228_x216.jpg",
+      "cover": "/api/images/8514228_x720.jpg",
+      "duration": "49 min"
+    },
+    {
+      "id": 1,
+      "title": "Big Brother Brasil",
+      "description": "Programa de 27/04/2020",
+      "thumbnail": "/api/images/8514208_x216.jpg",
+      "cover": "/api/images/8514208_x720.jpg",
+      "duration": "1 h"
+    },
+    {
+      "id": 1,
+      "title": "Big Brother Brasil",
+      "description": "Tiago se emociona na final do BBB20",
+      "thumbnail": "/api/images/8514159_x216.jpg",
+      "cover": "/api/images/8514159_x720.jpg",
+      "duration": "49 min"
+    },
+    {
+      "id": 1,
+      "title": "Big Brother Brasil",
+      "description": "Assista aos melhores momentos do BBB20",
+      "thumbnail": "/api/images/8514158_x216.jpg",
+      "cover": "/api/images/8514158_x720.jpg",
+      "duration": "49 min"
+    },
+    {
+      "id": 1,
+      "title": "Big Brother Brasil",
+      "description": "Thelma é a campeã do BBB20, com 44% dos votos",
+      "thumbnail": "/api/images/8514156_x216.jpg",
+      "cover": "/api/images/8514156_x720.jpg",
+      "duration": "4 min"
+    },
+    {
+      "id": 1,
+      "title": "Big Brother Brasil",
+      "description": "Manu fica em terceiro lugar no BBB20, com 21% dos votos",
+      "thumbnail": "/api/images/8514152_x216.jpg",
+      "cover": "/api/images/8514152_x720.jpg",
+      "duration": "7 min"
+    },
+    {
+      "id": 1,
+      "title": "Big Brother Brasil",
+      "description": "Tiago Leifert pergunta para sisters o que o BBB para elas",
+      "thumbnail": "/api/images/8514132_x216.jpg",
+      "cover": "/api/images/8514132_x720.jpg",
+      "duration": "1 min"
+    },
+    {
+      "id": 1,
+      "title": "Big Brother Brasil",
+      "description": "Sisters e ex-brothers do BBB20 assistem a vídeos com recados dos famosos",
+      "thumbnail": "/api/images/8514127_x216.jpg",
+      "cover": "/api/images/8514127_x720.jpg",
       "duration": "49 min"
     }
   ]

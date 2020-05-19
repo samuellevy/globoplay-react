@@ -86,25 +86,33 @@ const Program: React.FC = () => {
 
   return (
     <>
-      {programs.items.length > 0 && (
-        <Details>
-          <h1>{programs.items[programs.activeProgram].title}</h1>
-          <p>
-            Acompanhe 24h ao vivo a casa mais
-            <br /> vigiada do Brasil
-          </p>
-        </Details>
+      {keyControl.component === "featured" ? (
+        programs.episodes.length > 0 && (
+          <Details>
+            <h1>{programs.episodes[programs.activeProgram].title}</h1>
+            <p>{programs.episodes[programs.activeProgram].description}</p>
+          </Details>
+        )
+      ) : (
+        <>
+          <Details>
+            <h1>Big Brother Brasil</h1>
+            <p>
+              Assista 24h por dia
+              <br />a casa mais vigiada do Brasil
+            </p>
+          </Details>
+          <Options>
+            {items.map((item) => {
+              return (
+                <Button key={item.slug} selected={activeItem === item.id}>
+                  {item.title}
+                </Button>
+              );
+            })}
+          </Options>
+        </>
       )}
-
-      <Options>
-        {items.map((item) => {
-          return (
-            <Button key={item.slug} selected={activeItem === item.id}>
-              {item.title}
-            </Button>
-          );
-        })}
-      </Options>
     </>
   );
 };

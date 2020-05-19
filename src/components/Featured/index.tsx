@@ -21,7 +21,7 @@ const Featured: React.FC = (props) => {
   const [trackPosition, setTrackPosition] = useState(0);
   const [activeItem, setActiveItem] = useState(0);
 
-  const totalPrograms = programsContext.programs.items.length;
+  const totalPrograms = programsContext.programs.episodes.length;
 
   useEffect(() => {
     if (keyControl.component === "featured") {
