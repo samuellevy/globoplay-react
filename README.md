@@ -18,6 +18,9 @@
 - Instale as dependências usando o seu gerenciador de pacotes.  
   `yarn` ou `npm install`
 
+- Teste a aplicação.  
+  `yarn test` ou `npm run test`
+
 - Execute a aplicação.  
   `yarn start` ou `npm start`
 

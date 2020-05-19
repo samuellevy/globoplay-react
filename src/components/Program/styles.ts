@@ -13,7 +13,7 @@ export const Options = styled.div`
   display: flex;
   margin: 25px 0;
 `;
-export const Button = styled.div<IButton>`
+export const Button = styled.button<IButton>`
   padding: 10px 20px;
   border: ${colors.gray} 1px solid;
   border-radius: 15px;
