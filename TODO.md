@@ -47,6 +47,7 @@
 [x] Explicar o que não foi utilizado e porquê  
 [x] Explicar arquitetura usada  
 [x] Explicar o porquê da pasta fakeapi dentro da public
+[x] Escrever alguns testes
 
 ### E-mail original
 
