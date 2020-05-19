@@ -49,7 +49,6 @@ const Featured: React.FC = (props) => {
     } else if (key === "ArrowUp") {
       setFeaturedSelected(false);
       dispatch(changeComponent("links"));
-      // changeItem("reset");
     }
   };
 

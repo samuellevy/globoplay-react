@@ -15,7 +15,10 @@ import {
   setActiveProgram,
 } from "../../contexts/ProgramsContext";
 
+import { useKeyboardContext } from "../../contexts/KeyboardContext";
+
 const Home: React.FC = () => {
+  const { keyControl }: any = useKeyboardContext();
   const { programs, dispatch }: any = useProgramsContext();
   const { episodes, activeProgram } = programs;
 
@@ -46,6 +49,10 @@ const Home: React.FC = () => {
       {episodes.map((item: IItem, key: number) => (
         <Cover background={item.cover} active={key === activeProgram} />
       ))}
+      <Cover
+        background={coverBg}
+        active={keyControl.component != "featured" && true}
+      />
 
       <Content>
         <Program />
