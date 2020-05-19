@@ -71,7 +71,7 @@ const Menu: React.FC = () => {
       setActiveItem(newActiveItem);
     }
     else if(key==="ArrowRight"){
-      dispatch(changeComponent('links'));
+      dispatch(changeComponent('featured'));
     }
   }
 

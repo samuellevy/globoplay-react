@@ -1,0 +1,20 @@
+{
+  "programs": [
+    {
+      "id": 0,
+      "title": "Big Brother Brasil",
+      "description": "Big Brother Brasil",
+      "thumbnail": "/api/images/track_item_1.jpg",
+      "cover": "/api/images/bg-bigbrotherbrasil.jpg",
+      "duration": "3 min"
+    },
+    {
+      "id": 1,
+      "title": "Midnight Texas",
+      "description": "Midnight Texas",
+      "thumbnail": "/api/images/track_item_2.jpg",
+      "cover": "/api/images/bg-mignight-texas.jpg",
+      "duration": "49 min"
+    }
+  ]
+}

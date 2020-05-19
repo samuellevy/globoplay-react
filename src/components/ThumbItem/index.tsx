@@ -1,20 +1,34 @@
-import React from 'react';
+import React from "react";
 
-import { Container, Thumbnail, Title, Content, Description, DurationBox } from './styles';
+import {
+  Container,
+  Thumbnail,
+  Title,
+  Content,
+  Description,
+  DurationBox,
+} from "./styles";
 
 import track_1 from "../../assets/images/track_item_1.jpg";
 
-const ThumbItem: React.FC = () => {
-  return(
+type CardProps = {
+  title?: string;
+  thumbnail?: string;
+  description?: string;
+  duration?: string;
+};
+
+const ThumbItem = ({ title, thumbnail, description, duration }: CardProps) => {
+  return (
     <Container selected={false}>
-      <Thumbnail img={track_1}/>
+      <Thumbnail img={thumbnail} />
       <Content>
-        <Title>Big Brother Brasil</Title>
-        <Description>Bate-Papo BBB com Thelma, vencedora do BBB20</Description>
-        <DurationBox>3 min</DurationBox>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <DurationBox>{duration}</DurationBox>
       </Content>
     </Container>
   );
-}
+};
 
 export default ThumbItem;
