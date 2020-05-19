@@ -2,12 +2,8 @@ import styled from "styled-components";
 import React from "react";
 import { colors, metrics } from "../../global";
 
-interface ICover{
-  background?: any
-}
-
-interface IButton{
-  selected?: boolean
+interface ICover {
+  background?: any;
 }
 
 export const Container = styled.div`
@@ -27,15 +23,16 @@ export const Content = styled.div`
   color: ${colors.white};
   font-size: ${metrics.fonts.big};
   background: transparent;
-  background-image: linear-gradient(-180deg,rgba(0,0,0,.64),transparent);
-  ::before{
+  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.64), transparent);
+  ::before {
     content: " ";
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background: transparent;
-    background-image: linear-gradient(90deg,rgba(0,0,0,.64),transparent);
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.64), transparent);
   }
   > * {
     position: relative;
@@ -48,24 +45,10 @@ export const Cover = styled.div<ICover>`
   height: 100%;
   object-fit: cover;
   font-size: 22px;
-  ${props=>props.background && `
+  ${(props) =>
+    props.background &&
+    `
     background: url(${props.background}) no-repeat;
     background-size: cover;
-  `}
-`;
-
-export const Options = styled.div`
-  display: flex;
-  margin: 25px 0;
-`;
-export const Button = styled.div<IButton>`
-  padding: 10px 20px;
-  border: ${colors.gray} 1px solid;
-  border-radius: 15px;
-  margin-right: 15px;
-  transition: all 200ms linear;
-  ${props=>props.selected && `
-    color: ${colors.darkGray};
-    background-color: ${colors.white};
   `}
 `;
