@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useEffect } from "react";
 
 import { Container, Content, Cover } from "./styles";
 
@@ -12,7 +12,6 @@ import api from "../../services/api";
 import {
   useProgramsContext,
   updateItems,
-  setActiveProgram,
 } from "../../contexts/ProgramsContext";
 
 import { useKeyboardContext } from "../../contexts/KeyboardContext";
@@ -35,6 +34,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     getPrograms();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   interface IItem {
@@ -55,7 +55,7 @@ const Home: React.FC = () => {
       ))}
       <Cover
         background={coverBg}
-        active={keyControl.component != "featured" && true}
+        active={keyControl.component !== "featured" && true}
         key={"default"}
       />
 

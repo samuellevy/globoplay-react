@@ -6,7 +6,6 @@ import { KeyboardProvider } from "./contexts/KeyboardContext";
 import { ProgramsProvider } from "./contexts/ProgramsContext";
 import KeyboardHandle from "./components/KeyboardHandle";
 import Menu from "./components/Menu";
-import Programs from "./scenes/Programs";
 
 const App: React.FC = () => (
   <>

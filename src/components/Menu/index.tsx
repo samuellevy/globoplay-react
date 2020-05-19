@@ -43,6 +43,7 @@ const Menu: React.FC = () => {
     if (keyControl.component === "menu") {
       controlHandler(keyControl.key);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [keyControl]);
 
   useEffect(() => {

@@ -23,19 +23,6 @@ const Featured: React.FC = (props) => {
 
   const totalPrograms = programsContext.programs.episodes.length;
 
-  useEffect(() => {
-    if (keyControl.component === "featured") {
-      if (featuredSelected === false) {
-        setFeaturedSelected(true);
-      }
-      controlHandler(keyControl.key);
-    }
-  }, [keyControl]);
-
-  useEffect(() => {
-    programsContext.dispatch(setActiveProgram(activeItem));
-  }, [activeItem]);
-
   const controlHandler = (key: string) => {
     if (key === "ArrowLeft") {
       changeItem("previous");
@@ -71,6 +58,22 @@ const Featured: React.FC = (props) => {
       setActiveItem(1);
     }
   };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (keyControl.component === "featured") {
+      if (featuredSelected === false) {
+        setFeaturedSelected(true);
+      }
+      controlHandler(keyControl.key);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [keyControl]);
+
+  useEffect(() => {
+    programsContext.dispatch(setActiveProgram(activeItem));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeItem]);
 
   return (
     <Container selected={featuredSelected}>

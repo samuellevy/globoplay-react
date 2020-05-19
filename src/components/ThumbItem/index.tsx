@@ -9,16 +9,14 @@ import {
   DurationBox,
 } from "./styles";
 
-import track_1 from "../../assets/images/track_item_1.jpg";
-
-type CardProps = {
+type ThumbProps = {
   title?: string;
   thumbnail?: string;
   description?: string;
   duration?: string;
 };
 
-const ThumbItem = ({ title, thumbnail, description, duration }: CardProps) => {
+const ThumbItem = ({ title, thumbnail, description, duration }: ThumbProps) => {
   return (
     <Container selected={false}>
       <Thumbnail img={thumbnail} />

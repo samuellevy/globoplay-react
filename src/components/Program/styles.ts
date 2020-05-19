@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, metrics } from "../../global";
+import { colors } from "../../global";
 
 interface IButton {
   selected?: boolean;

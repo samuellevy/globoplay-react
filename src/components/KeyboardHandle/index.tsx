@@ -5,26 +5,20 @@ export default function KeyboardHandle() {
   const [key, setKey] = useState("");
   const { dispatch }: any = useKeyboardContext();
 
-  const handler = useCallback(
-    ({ key }) => {
-      setKey(key);
-    },
-    [key],
-  );
+  const handler = useCallback(({ key }) => {
+    setKey(key);
+  }, []);
 
-  const drop = useCallback(
-    ({ key }) => {
-      setKey("");
-    },
-    [key],
-  );
+  const drop = useCallback(() => {
+    setKey("");
+  }, []);
 
   useEventListener("keydown", handler);
   useEventListener("keyup", drop);
 
   useEffect(() => {
     dispatch(updateKey(key));
-  }, [key]);
+  }, [key, dispatch]);
 
   return <></>;
 }

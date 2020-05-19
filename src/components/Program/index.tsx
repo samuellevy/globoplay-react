@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from "react";
 
-import { Container, Details, Options, Button } from "./styles";
+import { Details, Options, Button } from "./styles";
 import {
   useKeyboardContext,
   changeComponent,
 } from "../../contexts/KeyboardContext";
 
-import {
-  useProgramsContext,
-  updateItems,
-} from "../../contexts/ProgramsContext";
+import { useProgramsContext } from "../../contexts/ProgramsContext";
 
 const Program: React.FC = () => {
   const [activeItem, setActiveItem] = useState(0);
   const { keyControl, dispatch }: any = useKeyboardContext();
-  const [linksSelected, setLinksSelected] = useState(false);
+  const [, setLinksSelected] = useState(false);
 
   const { programs }: any = useProgramsContext();
 
-  const [items, setItems] = useState([
+  const [items] = useState([
     {
       id: 1,
       slug: "assista",
@@ -40,16 +37,17 @@ const Program: React.FC = () => {
         setActiveItem(1);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [keyControl.component]);
 
   useEffect(() => {
     if (keyControl.component === "links") {
       controlHandler(keyControl.key);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [keyControl]);
 
   const controlHandler = (key: string) => {
-    let newActiveItem = activeItem;
     if (key === "ArrowDown") {
       setLinksSelected(false);
       setActiveItem(0);
