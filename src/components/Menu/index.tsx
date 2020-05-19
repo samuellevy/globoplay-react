@@ -1,34 +1,37 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Item } from "./styles";
 import Icon from "../Icon";
-import { useKeyboardContext, changeComponent } from "../../contexts/KeyboardContext";
+import {
+  useKeyboardContext,
+  changeComponent,
+} from "../../contexts/KeyboardContext";
 
 const Menu: React.FC = () => {
   const [items, setItem] = useState([
     {
       id: 1,
-      slug: 'busca',
-      title: "Busca"
+      slug: "busca",
+      title: "Busca",
     },
     {
       id: 2,
-      slug: 'inicio',
-      title: "Início"
+      slug: "inicio",
+      title: "Início",
     },
     {
       id: 3,
-      slug: 'agora-na-globo',
-      title: "Agora na Globo"
+      slug: "agora-na-globo",
+      title: "Agora na Globo",
     },
     {
       id: 4,
-      slug: 'categorias',
-      title: "Categorias"
+      slug: "categorias",
+      title: "Categorias",
     },
     {
       id: 5,
-      slug: 'minha-conta',
-      title: "Minha conta"
+      slug: "minha-conta",
+      title: "Minha conta",
     },
   ]);
 
@@ -36,56 +39,54 @@ const Menu: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState(false);
   const { keyControl, dispatch }: any = useKeyboardContext();
 
-  useEffect(()=>{
-    if(keyControl.component==="menu"){
+  useEffect(() => {
+    if (keyControl.component === "menu") {
       controlHandler(keyControl.key);
     }
-  },[keyControl]);
+  }, [keyControl]);
 
-  useEffect(()=>{
-    if(keyControl.component==="menu"){
+  useEffect(() => {
+    if (keyControl.component === "menu") {
       setActiveMenu(true);
       setActiveItem(1);
     } else {
       setActiveMenu(false);
       setActiveItem(0);
     }
-  },[keyControl.component]);
+  }, [keyControl.component]);
 
   const controlHandler = (key: string) => {
     let newActiveItem = activeItem;
-    if(key==="ArrowDown"){
-      if(activeItem < items.length){
+    if (key === "ArrowDown") {
+      if (activeItem < items.length) {
         newActiveItem++;
         setActiveMenu(true);
       }
       setActiveItem(newActiveItem);
-    }
-    else if(key==="ArrowUp"){
-      if(activeItem > 0){
+    } else if (key === "ArrowUp") {
+      if (activeItem > 0) {
         newActiveItem--;
       }
-      if(activeItem === 1){
+      if (activeItem === 1) {
         setActiveMenu(false);
       }
       setActiveItem(newActiveItem);
+    } else if (key === "ArrowRight") {
+      dispatch(changeComponent("featured"));
     }
-    else if(key==="ArrowRight"){
-      dispatch(changeComponent('featured'));
-    }
-  }
+  };
 
   return (
-  <Container active={activeMenu}>
-    {items.map((item)=>{
-      return (
-        <Item key={item.slug} selected={activeItem===item.id}>
-          <Icon name={item.slug}/>
-          <span>{item.title}</span>
-        </Item>
-      )
-    })}
-  </Container>
+    <Container active={activeMenu}>
+      {items.map((item) => {
+        return (
+          <Item key={item.slug} selected={activeItem === item.id}>
+            <Icon name={item.slug} />
+            <span>{item.title}</span>
+          </Item>
+        );
+      })}
+    </Container>
   );
 };
 

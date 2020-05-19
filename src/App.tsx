@@ -10,8 +10,8 @@ const App: React.FC = () => (
   <>
     <KeyboardProvider>
       <KeyboardHandle />
-        <Menu />
-        <Home />
+      <Menu />
+      <Home />
     </KeyboardProvider>
     <GlobalStyle />
   </>

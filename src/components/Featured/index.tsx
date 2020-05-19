@@ -13,6 +13,7 @@ const Featured: React.FC = (props) => {
 
   const [featuredSelected, setFeaturedSelected] = useState(false);
   const [trackPosition, setTrackPosition] = useState(0);
+
   const [activeItem, setActiveItem] = useState(1);
 
   useEffect(() => {
