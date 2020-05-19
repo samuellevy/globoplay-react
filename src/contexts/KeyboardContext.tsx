@@ -5,7 +5,7 @@ export const TodoContext = createContext([]);
 // Initial state
 const initialItems = {
   key: "",
-  component: "featured",
+  component: "links",
   last: "",
 };
 

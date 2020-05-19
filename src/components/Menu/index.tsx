@@ -73,7 +73,11 @@ const Menu: React.FC = () => {
       }
       setActiveItem(newActiveItem);
     } else if (key === "ArrowRight") {
-      dispatch(changeComponent("featured"));
+      if (keyControl.last !== "") {
+        dispatch(changeComponent(keyControl.last));
+      } else {
+        dispatch(changeComponent("featured"));
+      }
     }
   };
 
