@@ -6,6 +6,7 @@ export const TodoContext = createContext([]);
 const initialItems = {
   key: "",
   component: "featured",
+  last: "",
 };
 
 // Actions
@@ -27,7 +28,7 @@ export function controlKeyReducer(state: any, action: any) {
     case UPDATE_KEY:
       return { ...state, key: action.key };
     case CHANGE_COMPONENT:
-      return { ...state, component: action.component };
+      return { ...state, component: action.component, last: state.component };
     default:
       return state;
   }

@@ -47,11 +47,16 @@ const Home: React.FC = () => {
   return (
     <Container>
       {episodes.map((item: IItem, key: number) => (
-        <Cover background={item.cover} active={key === activeProgram} />
+        <Cover
+          background={item.cover}
+          active={key === activeProgram}
+          key={item.id}
+        />
       ))}
       <Cover
         background={coverBg}
         active={keyControl.component != "featured" && true}
+        key={"default"}
       />
 
       <Content>

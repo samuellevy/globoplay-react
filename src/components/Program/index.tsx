@@ -32,10 +32,6 @@ const Program: React.FC = () => {
   ]);
 
   useEffect(() => {
-    console.log(programs);
-  }, [programs]);
-
-  useEffect(() => {
     if (keyControl.component === "links") {
       setLinksSelected(true);
       if (keyControl.key === "ArrowRight") {

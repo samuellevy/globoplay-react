@@ -7,7 +7,7 @@ import {
 } from "../../contexts/KeyboardContext";
 
 const Menu: React.FC = () => {
-  const [items, setItem] = useState([
+  const [items] = useState([
     {
       id: 1,
       slug: "busca",
