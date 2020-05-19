@@ -1,6 +1,6 @@
 import data from "../../public/api/data.json";
 
-describe("<Menu />", () => {
+describe("Fake API", () => {
   test("should be a valid object", () => {
     expect(data).toBeInstanceOf(Object);
   });
