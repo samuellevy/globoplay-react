@@ -3,8 +3,8 @@
 ### Detalhes da entrega
 
 **Prazo**: 19/março - 12h00  
-[ ] Colocar o repo público  
-[ ] Enviar link para avaliação
+[x] Colocar o repo público  
+[x] Enviar link para avaliação
 
 ### Exemplo
 
