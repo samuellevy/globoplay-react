@@ -3,8 +3,8 @@
 ### Detalhes da entrega
 
 **Prazo**: 19/março - 12h00  
-[ ] Colocar o repo público  
-[ ] Enviar link para avaliação
+[x] Colocar o repo público  
+[x] Enviar link para avaliação
 
 ### Exemplo
 
@@ -47,6 +47,7 @@
 [x] Explicar o que não foi utilizado e porquê  
 [x] Explicar arquitetura usada  
 [x] Explicar o porquê da pasta fakeapi dentro da public
+[x] Escrever alguns testes
 
 ### E-mail original
 
