@@ -19,7 +19,7 @@
 
 - Menu  
   [x] Só navega o menu verticalmente.  
-  [x] Quando pressionado para direita, muda o foco para o último componente antes do `Menu`
+  [x] Quando pressionado para direita, muda o foco para o **último** componente antes do `Menu` ser acesso
 
 - Destaque  
   [x] `Destaque` navega entre os dois botões.  

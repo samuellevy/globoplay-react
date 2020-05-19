@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext } from "react";
 
-export const TodoContext = createContext([]);
+export const KeyBoardContext = createContext([]);
 
 // Initial state
 const initialItems = {
@@ -37,13 +37,13 @@ export function controlKeyReducer(state: any, action: any) {
 function KeyboardProvider(props: any) {
   const [keyControl, dispatch] = useReducer(controlKeyReducer, initialItems);
 
-  const todoData = { keyControl, dispatch };
+  const keyboardData = { keyControl, dispatch };
 
-  return <TodoContext.Provider value={todoData} {...props} />;
+  return <KeyBoardContext.Provider value={keyboardData} {...props} />;
 }
 
 function useKeyboardContext() {
-  return useContext(TodoContext);
+  return useContext(KeyBoardContext);
 }
 
 export { KeyboardProvider, useKeyboardContext };
