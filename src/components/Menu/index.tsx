@@ -65,11 +65,8 @@ const Menu: React.FC = () => {
       }
       setActiveItem(newActiveItem);
     } else if (key === "ArrowUp") {
-      if (activeItem > 0) {
+      if (activeItem > 1) {
         newActiveItem--;
-      }
-      if (activeItem === 1) {
-        setActiveMenu(false);
       }
       setActiveItem(newActiveItem);
     } else if (key === "ArrowRight") {
