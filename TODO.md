@@ -15,11 +15,11 @@
 - Geral  
   [x] Navegação com as arrows do teclado  
   [x] Criar estilização  
-  [ ] Mudar imagem do fundo ao trocar itens e focos entre os itens
+  [x] Mudar imagem do fundo ao trocar itens e focos entre os itens
 
 - Menu  
   [x] Só navega o menu verticalmente.  
-  [?] Quando pressionado para direita, muda o foco para `Destaque`
+  [x] Quando pressionado para direita, muda o foco para o último componente antes do `Menu`
 
 - Destaque  
   [x] `Destaque` navega entre os dois botões.  
@@ -27,9 +27,9 @@
   [x] Quando pressionado para baixo, foca o `Trilho` e some o `Destaque`.
 
 - Trilho  
-  [ ] Navega entre os itens  
-  [ ] Quando pressionado para a esquerda e estiver no primeiro item, foca o `Menu`.  
-  [ ] Quando pressionado para cima, o `Destaque` volta a aparecer
+  [x] Navega entre os itens  
+  [x] Quando pressionado para a esquerda e estiver no primeiro item, foca o `Menu`.  
+  [x] Quando pressionado para cima, o `Destaque` volta a aparecer
 
 ### RNF
 
@@ -43,10 +43,10 @@
 
 ### Finalização
 
-[ ] Explicar o que foi utilizado  
-[ ] Explicar o que não foi utilizado e porquê  
-[ ] Explicar arquitetura usada  
-[ ] Explicar o porquê da pasta fakeapi dentro da public
+[x] Explicar o que foi utilizado  
+[x] Explicar o que não foi utilizado e porquê  
+[x] Explicar arquitetura usada  
+[x] Explicar o porquê da pasta fakeapi dentro da public
 
 ### E-mail original
 

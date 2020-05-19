@@ -1,44 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Teste globo.com
 
-## Available Scripts
+### Objetivo
 
-In the project directory, you can run:
+![GloboTest](./teste-globoplay-tv.gif)
 
-### `npm start`
+### Ambiente
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`nodejs v10.16.3`  
+`yarn 1.17.3`  
+`npm 6.9.0`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Para execução
 
-### `npm test`
+- Clone este repositório  
+  `git clone git@github.com:samuellevy/globoplay-react.git`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Instale as dependências usando o seu gerenciador de pacotes.  
+  `yarn` ou `npm install`
 
-### `npm run build`
+- Teste a aplicação.  
+  `yarn test` ou `npm run test`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Execute a aplicação.  
+  `yarn start` ou `npm start`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Bibliotecas utilizadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`styled-components` - para criação mais rápida de componentes sem ciclo de vida e estilizados.
 
-### `npm run eject`
+`axios` - para requisições http
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### API
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Criei uma pasta na raíz de `/public` apenas para mockar uma api fake. Achei que ficaria mais interessante
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Considerações
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Foi respeitada a regra de `não utilize o Redux nem bibliotecas prontas para navegação e slider.`.
 
-## Learn More
+- Utilizei `flex-box`, pois nas orientações não falava sobre não poder usá-lo.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Preferi usar uma arquiteura mais simples, separada em components, scenes para as páginas (que no caso só tem uma), services, contexts.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- O arquivo [TODO.md](./TODO.md) tem todo o planejamento para a execução do teste.
+
+#### Obrigado pela oportunidade!
