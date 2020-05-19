@@ -41,3 +41,7 @@ Criei uma pasta na raíz de `/public` apenas para mockar uma api fake. Achei que
 - Utilizei `flex-box`, pois nas orientações não falava sobre não poder usá-lo.
 
 - Preferi usar uma arquiteura mais simples, separada em components, scenes para as páginas (que no caso só tem uma), services, contexts.
+
+- O arquivo [TODO.md](./TODO.md) tem todo o planejamento para a execução do teste.
+
+#### Obrigado pela oportunidade!
