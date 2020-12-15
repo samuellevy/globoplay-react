@@ -13,7 +13,20 @@ import {
   updateItems,
 } from "../../contexts/ProgramsContext";
 
+interface ITrack {
+  key: number;
+}
+
 const Home: React.FC = () => {
+  const tracks: ITrack[] = [
+    {
+      key: 0
+    },
+    {
+      key: 1
+    }
+  ];
+
   const [coverBg] = useState("api/images/bg-bigbrotherbrasil.jpg");
   const { programs, dispatch }: any = useProgramsContext();
   const { episodes, activeProgram } = programs;
@@ -47,8 +60,9 @@ const Home: React.FC = () => {
       <Content>
         <Program />
 
-        <Featured trackName={"track-0"} episodes={episodes}/>
-        <Featured trackName={"track-1"} episodes={episodes}/>
+        {tracks.map((track: ITrack)=>{
+          return <Featured key={track.key} trackName={`track-${track.key}`} episodes={episodes} totalTracks={tracks.length}/>
+        })}
       </Content>
     </Container>
   );

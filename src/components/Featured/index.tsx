@@ -17,6 +17,7 @@ import IEpisodeDetails from "../../dtos/IEpisodeDetails";
 interface IFeatured{
   episodes:IEpisodeDetails[];
   trackName:string;
+  totalTracks: number;
 }
 
 const Featured: React.FC<IFeatured> = (props) => {
