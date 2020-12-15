@@ -15,6 +15,7 @@ const ThumbItem = ({
   thumbnail,
   description,
   duration,
+  cover
 }: IEpisodeDetails) => {
   return (
     <Container selected={false}>

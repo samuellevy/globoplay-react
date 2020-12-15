@@ -1,10 +1,11 @@
 import React, { createContext, useReducer, useContext } from "react";
+import IEpisodeDetails from "../dtos/IEpisodeDetails";
 
 export const ProgramsContext = createContext([]);
 
 const initialState = {
   episodes: [],
-  activeProgram: 0,
+  activeProgram: {} as IEpisodeDetails,
 };
 
 // Actions
@@ -16,8 +17,8 @@ export function updateItems(episodes: Object[]) {
   return { type: UPDATE_ITEMS, episodes };
 }
 
-export function setActiveProgram(program_id: number) {
-  return { type: SET_ACTIVE_PROGRAM, activeProgram: program_id };
+export function setActiveProgram(program: object) {
+  return { type: SET_ACTIVE_PROGRAM, activeProgram: program };
 }
 
 export function programsReducer(state: any, action: any) {

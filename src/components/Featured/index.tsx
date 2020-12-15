@@ -12,8 +12,15 @@ import {
   useProgramsContext,
   setActiveProgram,
 } from "../../contexts/ProgramsContext";
+import IEpisodeDetails from "../../dtos/IEpisodeDetails";
 
-const Featured: React.FC = (props) => {
+interface IFeatured{
+  episodes:IEpisodeDetails[];
+  trackName:string;
+}
+
+const Featured: React.FC<IFeatured> = (props) => {
+  const { trackName, episodes } = props;
   const { keyControl, dispatch }: any = useKeyboardContext();
   const programsContext: any = useProgramsContext();
 
@@ -24,18 +31,26 @@ const Featured: React.FC = (props) => {
   const totalPrograms = programsContext.programs.episodes.length;
 
   const controlHandler = (key: string) => {
-    if (key === "ArrowLeft") {
-      changeItem("previous");
-    } else if (key === "ArrowRight") {
-      if (featuredSelected === false) {
-        // setFeaturedSelected(true);
-        // setActiveItem(1);
-      } else {
-        changeItem("next");
-      }
-    } else if (key === "ArrowUp") {
-      setFeaturedSelected(false);
-      dispatch(changeComponent("links"));
+    switch(key){
+      case 'ArrowLeft':
+        changeItem("previous");
+        break;
+      case 'ArrowRight':
+        if (featuredSelected === false) {
+          setFeaturedSelected(true);
+          setActiveItem(1);
+        } else {
+          changeItem("next");
+        }
+        break;
+      case 'ArrowDown':
+        changeItem("down");
+        setFeaturedSelected(false);
+        break;
+      case 'ArrowUp':
+        changeItem("up");
+        setFeaturedSelected(false);
+        break;
     }
   };
 
@@ -53,31 +68,69 @@ const Featured: React.FC = (props) => {
         dispatch(changeComponent("menu"));
         setFeaturedSelected(false);
       }
+    } else if (direction === "down") {
+      switch(trackName){
+        case "track-0":
+          dispatch(changeComponent("track-1"));
+          break;
+        default:
+          break;
+      }
+
+    } else if (direction === "up") {
+      switch(trackName){
+        case "track-0":
+          programsContext.dispatch(setActiveProgram({cover: "api/images/bg-bigbrotherbrasil.jpg"}));
+          dispatch(changeComponent("links"));
+          break;
+        case "track-1":
+          dispatch(changeComponent("track-0"));
+          break;
+        default:
+          break;
+      }
     } else if (direction === "reset") {
       setTrackPosition(0);
       setActiveItem(1);
     }
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    if (keyControl.component === "featured") {
+  const keyControlMonitor = () => {
+    if (keyControl.component === trackName){
       if (featuredSelected === false) {
+        programsContext.dispatch(setActiveProgram(episodes[0]));
         setFeaturedSelected(true);
+      } else {
+        controlHandler(keyControl.key);
       }
-      controlHandler(keyControl.key);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [keyControl]);
+  }
 
-  useEffect(() => {
-    programsContext.dispatch(setActiveProgram(activeItem));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeItem]);
+  useEffect(keyControlMonitor, [keyControl]);
+
+  const setProgramsContext = () => {
+    programsContext.dispatch(setActiveProgram(episodes[activeItem]));
+  }
+
+  useEffect(setProgramsContext, [activeItem]);
 
   return (
     <Container selected={featuredSelected}>
-      <Track position={trackPosition}>{props.children}</Track>
+      <Track position={trackPosition}>
+      {episodes.map((item: IEpisodeDetails) => {
+            const { id, title, description, thumbnail, duration, cover } = item;
+            return (
+              <ThumbItem
+                key={id}
+                title={title}
+                thumbnail={thumbnail}
+                description={description}
+                duration={duration}
+                cover={cover}
+              />
+            );
+          })}
+      </Track>
     </Container>
   );
 };

@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Container, Content, Cover } from "./styles";
 
-import coverBg from "../../assets/images/bg-bigbrotherbrasil.jpg";
-import Featured, { ThumbItem } from "../../components/Featured";
+import Featured from "../../components/Featured";
 
 import Program from "../../components/Program";
 
@@ -14,14 +13,14 @@ import {
   updateItems,
 } from "../../contexts/ProgramsContext";
 
-import { useKeyboardContext } from "../../contexts/KeyboardContext";
-
-import IEpisodeDetails from "../../dtos/IEpisodeDetails";
-
 const Home: React.FC = () => {
-  const { keyControl }: any = useKeyboardContext();
+  const [coverBg] = useState("api/images/bg-bigbrotherbrasil.jpg");
   const { programs, dispatch }: any = useProgramsContext();
   const { episodes, activeProgram } = programs;
+
+  const callGetPrograms = () => {
+    getPrograms();
+  }
 
   async function getPrograms() {
     try {
@@ -34,43 +33,22 @@ const Home: React.FC = () => {
     }
   }
 
-  useEffect(() => {
-    getPrograms();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  useEffect(callGetPrograms, []);
+
 
   return (
     <Container>
-      {episodes.map((item: IEpisodeDetails, key: number) => (
-        <Cover
-          background={item.cover}
-          active={key === activeProgram}
-          key={item.id}
-        />
-      ))}
       <Cover
-        background={coverBg}
-        active={keyControl.component !== "featured" && true}
-        key={"default"}
+        background={activeProgram?activeProgram.cover : coverBg}
+        active={true}
+        key={activeProgram?activeProgram.id:0}
       />
 
       <Content>
         <Program />
 
-        <Featured>
-          {episodes.map((item: IEpisodeDetails) => {
-            const { id, title, description, thumbnail, duration } = item;
-            return (
-              <ThumbItem
-                key={id}
-                title={title}
-                thumbnail={thumbnail}
-                description={description}
-                duration={duration}
-              />
-            );
-          })}
-        </Featured>
+        <Featured trackName={"track-0"} episodes={episodes}/>
+        <Featured trackName={"track-1"} episodes={episodes}/>
       </Content>
     </Container>
   );

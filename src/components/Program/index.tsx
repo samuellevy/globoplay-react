@@ -27,7 +27,7 @@ const Program: React.FC = () => {
     },
   ]);
 
-  useEffect(() => {
+  const changeComponentByKey = () =>{
     if (keyControl.component === "links") {
       setLinksSelected(true);
       if (keyControl.key === "ArrowRight") {
@@ -36,21 +36,23 @@ const Program: React.FC = () => {
         setActiveItem(1);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [keyControl.component]);
+  }
 
-  useEffect(() => {
+  const controlPrograms = () => {
     if (keyControl.component === "links") {
       controlHandler(keyControl.key);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [keyControl]);
+  }
+
+  useEffect(changeComponentByKey, [keyControl.component]);
+
+  useEffect(controlPrograms, [keyControl]);
 
   const controlHandler = (key: string) => {
     if (key === "ArrowDown") {
       setLinksSelected(false);
       setActiveItem(0);
-      dispatch(changeComponent("featured"));
+      dispatch(changeComponent("track-0"));
     }
     if (key === "ArrowLeft") {
       changeItem("previous");
